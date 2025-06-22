@@ -1,4 +1,7 @@
 import { Stripe } from "stripe";
+import { ObjectId } from "mongodb";
+import { instanceDb } from "./mongo";
+import { sendOnDiscord } from "./discord";
 
 export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2025-05-28.basil",
@@ -17,7 +20,7 @@ export async function createCardCheckout({ id }: { id: string }) {
       mode: "payment",
       payment_method_types: ["card"],
       metadata: {
-        storyId: id,
+        id,
       },
       success_url: `${baseUrl}/success?id=${id}`,
       cancel_url: `${baseUrl}`,
@@ -31,3 +34,37 @@ export async function createCardCheckout({ id }: { id: string }) {
     throw new Error("Error to create payment.");
   }
 }
+
+interface IHandlePaymentStripe {
+  email: string;
+  baseId: string;
+}
+
+export const handlePaymentStripe = async ({
+  email,
+  baseId,
+}: IHandlePaymentStripe) => {
+  const db = await instanceDb();
+
+  const base = await db.findOne({
+    _id: ObjectId.createFromHexString(baseId),
+  });
+
+  if (!base) throw new Error("Imagem não encontrada para aprovação.");
+
+  await db.updateOne(
+    { _id: base?._id },
+    {
+      $set: { status: "approved" },
+    }
+  );
+
+  // await sendStoryOnDiscord({
+  //   story: {
+  //     _id: story._id.toString(),
+  //     imageUrls: story.imageUrls,
+  //     description: story.description,
+  //   },
+  //   userEmail,
+  // });
+};
