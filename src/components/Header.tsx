@@ -4,12 +4,20 @@ import { Input } from "@/components/ui/input";
 import { Upload, Loader2 } from "lucide-react";
 import { useRef, useState } from "react";
 import { LogoInkPfp } from "./ui/logo-inkpfp";
-import { createPayment } from "@/actions";
 import { useInitPayment } from "@/hooks/use-init-payment";
+import { EmailDialog } from "./dialog-payment";
 
 const Header = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { handleFileChange, isLoading } = useInitPayment();
+  const {
+    isLoading,
+    isDialogOpen,
+    setIsDialogOpen,
+    email,
+    setEmail,
+    handleSubmit,
+    handleFileChange,
+  } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -17,6 +25,14 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
+      <EmailDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        email={email}
+        setEmail={setEmail}
+        onSubmit={handleSubmit}
+        isLoading={isLoading}
+      />
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <LogoInkPfp />
         <nav className="hidden md:flex items-center space-x-8">

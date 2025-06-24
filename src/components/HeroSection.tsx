@@ -5,10 +5,19 @@ import { ArrowRight, Upload, Loader2 } from "lucide-react";
 import { useRef, useState } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { useInitPayment } from "@/hooks/use-init-payment";
+import { EmailDialog } from "./dialog-payment";
 
 const HeroSection = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { handleFileChange, isLoading } = useInitPayment();
+  const {
+    isLoading,
+    isDialogOpen,
+    setIsDialogOpen,
+    email,
+    setEmail,
+    handleSubmit,
+    handleFileChange,
+  } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -16,6 +25,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative py-24 px-4 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <EmailDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        email={email}
+        setEmail={setEmail}
+        onSubmit={handleSubmit}
+        isLoading={isLoading}
+      />
       <BackgroundBeams className="z-0" />
       <div className="container mx-auto text-center relative z-10">
         <div className="animate-fade-in">

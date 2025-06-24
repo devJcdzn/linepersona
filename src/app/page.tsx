@@ -6,11 +6,10 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import { Wrapper } from "@/components/wrapper";
 
 export default function Home() {
   return (
-    <Wrapper>
+    <div className="min-h-screen bg-gray-50">
       <Header />
       <HeroSection />
       <HowItWorksSection />
@@ -19,6 +18,6 @@ export default function Home() {
       <CtaSection />
       <FaqSection />
       <Footer />
-    </Wrapper>
+    </div>
   );
 }

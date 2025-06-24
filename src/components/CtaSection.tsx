@@ -8,7 +8,15 @@ import { EmailDialog } from "./dialog-payment";
 
 const CtaSection = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { isLoading, handleFileChange } = useInitPayment();
+  const {
+    isLoading,
+    isDialogOpen,
+    setIsDialogOpen,
+    email,
+    setEmail,
+    handleSubmit,
+    handleFileChange,
+  } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -16,6 +24,14 @@ const CtaSection = () => {
 
   return (
     <section className="py-20 px-4 bg-zinc-900 text-white">
+      <EmailDialog
+        isOpen={isDialogOpen}
+        onOpenChange={setIsDialogOpen}
+        email={email}
+        setEmail={setEmail}
+        onSubmit={handleSubmit}
+        isLoading={isLoading}
+      />
       <div className="container mx-auto text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
