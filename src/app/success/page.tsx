@@ -1,21 +1,18 @@
-"use client";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/button";
 import { CircleCheckBig } from "lucide-react";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
-export default function SuccessPage() {
-  const router = useRouter();
-  const params = useSearchParams();
-  const id = params.get("id");
+export default async function SuccessPage({
+  searchParams,
+}: {
+  searchParams: { id?: string };
+}) {
+  const id = await searchParams.id;
+  console.log(id);
 
-  useEffect(() => {
-    if (!id) {
-      router.push("/");
-    }
-  }, [id, router]);
+  if (!id) redirect("/");
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
