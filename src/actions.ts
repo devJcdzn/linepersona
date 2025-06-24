@@ -6,7 +6,7 @@ import { uploadToR2 } from "./lib/s3";
 import { createCardCheckout } from "./lib/stripe";
 
 export async function createPayment(image: File, email: string) {
-  const fileKey = `uploads-inkpfp/${Date.now()}-${image.name}`;
+  const fileKey = `uploads-linepersona/${email}-${image.name}`;
 
   let sessionUrl: string | null;
 

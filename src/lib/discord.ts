@@ -27,7 +27,7 @@ export const sendOnDiscord = async (data: Payload) => {
       timestamp: new Date().toISOString(),
     };
 
-    await fetch(process.env.DC_WEBHOOK_SINGLE || "", {
+    await fetch(process.env.DC_WEBHOOK || "", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

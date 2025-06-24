@@ -20,7 +20,7 @@ export async function createCardCheckout({
       customer_email: customerEmail,
       line_items: [
         {
-          price: "price_1RcvCsLNTpMfRO2wfS8Tv23L",
+          price: "price_1RdZj3BUQ73hNNgseJElLq1y",
           quantity: 1,
         },
       ],

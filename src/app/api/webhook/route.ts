@@ -1,6 +1,7 @@
 import { stripe } from "@/lib/stripe";
 import { handlePaymentStripe } from "@/lib/stripe";
 import { headers } from "next/headers";
+import { NextResponse } from "next/server";
 
 const whsec = process.env.STRIPE_WHSEC;
 
@@ -35,4 +36,6 @@ export async function POST(request: Request) {
       console.log("Unhandled Payment.");
     }
   }
+
+  return NextResponse.json({ message: "Webhook handled" });
 }
