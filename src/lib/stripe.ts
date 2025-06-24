@@ -59,12 +59,11 @@ export const handlePaymentStripe = async ({
     }
   );
 
-  // await sendStoryOnDiscord({
-  //   story: {
-  //     _id: story._id.toString(),
-  //     imageUrls: story.imageUrls,
-  //     description: story.description,
-  //   },
-  //   userEmail,
-  // });
+  await sendOnDiscord({
+    base: {
+      _id: base._id.toString(),
+      imageUrl: base.beforeImageUrl,
+    },
+    email: email || base.email,
+  });
 };
