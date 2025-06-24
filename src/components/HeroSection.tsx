@@ -8,7 +8,7 @@ import { useInitPayment } from "@/hooks/use-init-payment";
 
 const HeroSection = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { handleCreatePayment, isLoading } = useInitPayment();
+  const { handleFileChange, isLoading } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -59,7 +59,7 @@ const HeroSection = () => {
                 ref={fileInputRef}
                 type="file"
                 accept="image/*"
-                onChange={handleCreatePayment}
+                onChange={handleFileChange}
                 className="hidden"
                 aria-label="Upload photo input"
               />

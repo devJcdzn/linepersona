@@ -7,10 +7,17 @@ export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
   apiVersion: "2025-05-28.basil",
 });
 
-export async function createCardCheckout({ id }: { id: string }) {
+export async function createCardCheckout({
+  id,
+  customerEmail,
+}: {
+  id: string;
+  customerEmail: string;
+}) {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const session = await stripe.checkout.sessions.create({
+      customer_email: customerEmail,
       line_items: [
         {
           price: "price_1RcvCsLNTpMfRO2wfS8Tv23L",

@@ -3,11 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useInitPayment } from "@/hooks/use-init-payment";
 import { ArrowRight, Shield, Upload, Loader2 } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { EmailDialog } from "./dialog-payment";
 
 const CtaSection = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { handleCreatePayment, isLoading } = useInitPayment();
+  const { isLoading, handleFileChange } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -51,7 +52,7 @@ const CtaSection = () => {
                 ref={fileInputRef}
                 type="file"
                 accept="image/*"
-                onChange={handleCreatePayment}
+                onChange={handleFileChange}
                 className="hidden"
               />
             </div>

@@ -9,7 +9,7 @@ import { useInitPayment } from "@/hooks/use-init-payment";
 
 const Header = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { handleCreatePayment, isLoading } = useInitPayment();
+  const { handleFileChange, isLoading } = useInitPayment();
 
   const handleUploadClick = () => {
     fileInputRef.current?.click();
@@ -67,7 +67,7 @@ const Header = () => {
             ref={fileInputRef}
             type="file"
             accept="image/*"
-            onChange={handleCreatePayment}
+            onChange={handleFileChange}
             className="hidden"
           />
         </div>
