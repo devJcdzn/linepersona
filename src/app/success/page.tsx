@@ -7,9 +7,10 @@ import { redirect } from "next/navigation";
 export default async function SuccessPage({
   searchParams,
 }: {
-  searchParams: { id?: string };
+  searchParams: Promise<{ id?: string }>;
 }) {
-  const id = await searchParams.id;
+  const params = await searchParams;
+  const id = params.id;
   console.log(id);
 
   if (!id) redirect("/");
