@@ -44,20 +44,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://ink-avatars.com'), // Replace with your actual domain
+  metadataBase: new URL('https://persona.inkmemory.site'), // Replace with your actual domain
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://line-persona.inkmemory.site', // Replace with your actual domain
+    url: 'https://persona.inkmemory.site', // Replace with your actual domain
     siteName: 'Line Persona - Minimalist Profile Avatars',
     title: 'Transform Photos into Minimalist Profile Avatars | Ink',
     description: 'Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.',
     images: [
       {
-        url: '/og-image.jpg', // You'll need to create this image
+        url: '/line-persona.png', // You'll need to create this image
         width: 1200,
         height: 630,
         alt: 'Line Persona - Transform your photos into minimalist profile avatars',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     creator: '@clo_jeann', // Replace with your actual Twitter handle
     title: 'Transform Photos into Minimalist Profile Avatars | Line Persona',
     description: 'Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.',
-    images: ['/twitter-image.jpg'], // You'll need to create this image
+    images: ['/line-persona.png'], // You'll need to create this image
   },
   robots: {
     index: true,
