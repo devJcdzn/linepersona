@@ -15,10 +15,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Line Persona - Transform Photos into Minimalist Profile Avatars | Professional LinkedIn, Twitter, GitHub",
-    template: "Line Persona | Ink - Minimalist Profile Avatars"
+    default:
+      "Line Persona - Transform Photos into Minimalist Profile Avatars | Professional LinkedIn, Twitter, GitHub",
+    template: "Line Persona | Ink - Minimalist Profile Avatars",
   },
-  description: "Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms. Stand out with hand-drawn, unique avatars.",
+  description:
+    "Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms. Stand out with hand-drawn, unique avatars.",
   keywords: [
     "profile avatar",
     "minimalist avatar",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
     "professional branding",
     "personal branding",
     "avatar generator",
-    "profile picture maker"
+    "profile picture maker",
   ],
   authors: [{ name: "Ink Team" }],
   creator: "Ink",
@@ -44,33 +46,35 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://persona.inkmemory.site'), // Replace with your actual domain
+  metadataBase: new URL("https://persona.inkmemory.site"), // Replace with your actual domain
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://persona.inkmemory.site', // Replace with your actual domain
-    siteName: 'Line Persona - Minimalist Profile Avatars',
-    title: 'Transform Photos into Minimalist Profile Avatars | Ink',
-    description: 'Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.',
+    type: "website",
+    locale: "en_US",
+    url: "https://persona.inkmemory.site",
+    siteName: "Line Persona - Minimalist Profile Avatars",
+    title: "Transform Photos into Minimalist Profile Avatars | Ink",
+    description:
+      "Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.",
     images: [
       {
-        url: '/line-persona.png', // You'll need to create this image
+        url: "/line-persona.png",
         width: 1200,
         height: 630,
-        alt: 'Line Persona - Transform your photos into minimalist profile avatars',
+        alt: "Line Persona - Transform your photos into minimalist profile avatars",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@clo_jeann', // Replace with your actual Twitter handle
-    creator: '@clo_jeann', // Replace with your actual Twitter handle
-    title: 'Transform Photos into Minimalist Profile Avatars | Line Persona',
-    description: 'Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.',
-    images: ['/line-persona.png'], // You'll need to create this image
+    card: "summary_large_image",
+    site: "@clo_jeann",
+    creator: "@clo_jeann",
+    title: "Transform Photos into Minimalist Profile Avatars | Line Persona",
+    description:
+      "Transform your photos into stunning minimalist profile avatars in 30 minutes. Perfect for LinkedIn, Twitter/X, GitHub, and professional platforms.",
+    images: ["/line-persona.png"],
   },
   robots: {
     index: true,
@@ -78,27 +82,21 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  // verification: {
-  //   google: 'your-google-verification-code', // Replace with your actual verification code
-  //   // yandex: 'your-yandex-verification-code',
-  //   // yahoo: 'your-yahoo-verification-code',
-  // },
-  category: 'technology',
-  classification: 'Business',
+  category: "technology",
+  classification: "Business",
   other: {
-    'application-name': 'Line Persona',
-    'apple-mobile-web-app-title': 'Line Persona',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'mobile-web-app-capable': 'yes',
-    'msapplication-TileColor': '#000000',
-    // 'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000',
+    "application-name": "Line Persona",
+    "apple-mobile-web-app-title": "Line Persona",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "mobile-web-app-capable": "yes",
+    "msapplication-TileColor": "#000000",
+    "theme-color": "#000000",
   },
 };
 
