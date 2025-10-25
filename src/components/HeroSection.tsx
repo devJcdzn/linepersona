@@ -36,14 +36,16 @@ const HeroSection = () => {
       <BackgroundBeams className="z-0" />
       <div className="container mx-auto text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-6 leading-tight">
-            Turn Your Photo Into a<br />
-            <span className="bg-gradient-to-r from-zinc-900 to-gray-600 bg-clip-text text-transparent">
-              Minimalist Profile Avatar
-            </span>
+          <h1 className="text-4xl md:text-6xl font-bold text-zinc-900 mb-2 leading-tight">
+            From Ordinary Photo to
+            <br />
+            <span className="">Minimalist Masterpiece</span>
           </h1>
+          <span className="bg-pink-200 text-3xl p-2 rounded-md font-bold">
+            Only $10
+          </span>
 
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 mt-6 max-w-2xl mx-auto">
             Stand out on LinkedIn, Twitter/X, GitHub and beyond.
           </p>
 
@@ -51,7 +53,7 @@ const HeroSection = () => {
             <div className="relative">
               <Button
                 size="lg"
-                className="bg-pink-100 text-zinc-900 hover:bg-pink-200 transition-all duration-200 text-lg px-8 py-6"
+                className="bg-pink-100 text-zinc-900 hover:bg-pink-200 border border-pink-300 transition-all duration-200 text-lg px-8 py-6"
                 onClick={handleUploadClick}
                 disabled={isLoading}
                 aria-label="Upload your photo to get started"
@@ -87,7 +89,7 @@ const HeroSection = () => {
                 className="w-2 h-2 bg-green-500 rounded-full animate-pulse"
                 aria-hidden="true"
               />
-              <span>Delivered within 30 minutes</span>
+              <span>Delivered within 60-120 minutes</span>
             </div>
           </div>
 
@@ -100,7 +102,7 @@ const HeroSection = () => {
               <span role="img" aria-label="star">
                 ⭐
               </span>{" "}
-              1000+ happy users
+              80+ happy users
             </li>
             <li className="flex items-center gap-2">
               <span role="img" aria-label="lightning">

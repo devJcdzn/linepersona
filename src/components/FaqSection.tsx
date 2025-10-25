@@ -10,7 +10,7 @@ const FaqSection = () => {
     {
       question: "How fast is delivery?",
       answer:
-        "We deliver your minimalist avatar within 30-60 minutes after payment confirmation. Most orders are completed even faster!",
+        "We deliver your minimalist avatar within 60-120 minutes after payment confirmation. Most orders are completed even faster!",
     },
     {
       question: "Are avatars made with AI?",

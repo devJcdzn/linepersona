@@ -48,12 +48,12 @@ const Footer = () => {
           </div> */}
 
           {/* Support */}
-          {/* <div>
+          <div>
             <h4 className="font-semibold text-zinc-900 mb-4">Support</h4>
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="mailto:lopesjean81@gmail.com"
                   className="text-gray-600 hover:text-zinc-900 transition-colors"
                 >
                   Contact Us
@@ -67,22 +67,14 @@ const Footer = () => {
                   FAQ
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-zinc-900 transition-colors"
-                >
-                  Help Center
-                </a>
-              </li>
             </ul>
-          </div> */}
+          </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © 2025 inkpfp. All rights reserved.
+            © 2025 InkMemory. All rights reserved. 613.930.056/0001-48
           </p>
 
           {/* <div className="flex items-center space-x-4">
